@@ -38,9 +38,6 @@ class WebhookActionLogger(commands.Cog):
         )
         await webhook.send(embed=embed)
 
-    # ⚠️ Discord.py DOES NOT provide a kick event.
-    # You can't detect kicks unless you track members manually.
-    # But I will leave your structure, fixed, to avoid breaking logic.
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         # You can't know if they were kicked VS left.
